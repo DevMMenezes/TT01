@@ -1,0 +1,17 @@
+unit Pedido.ViewModel;
+
+interface
+
+type
+  TPedidoViewModel = class
+  private
+    FTotalItemsPedido: Integer;
+    FValorTotal: Currency;
+    FValorTotalVolumes: Currency;
+  public
+
+  end;
+
+implementation
+
+end.

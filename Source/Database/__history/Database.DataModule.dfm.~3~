@@ -1,0 +1,17 @@
+object Connection: TConnection
+  Height = 480
+  Width = 640
+  object FDConnection: TFDConnection
+    Left = 120
+    Top = 184
+  end
+  object FDGUIxWaitCursor: TFDGUIxWaitCursor
+    Provider = 'Forms'
+    Left = 120
+    Top = 304
+  end
+  object FDPhysMySQLDriverLink: TFDPhysMySQLDriverLink
+    Left = 120
+    Top = 240
+  end
+end

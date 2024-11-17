@@ -1,0 +1,159 @@
+unit Produto.View;
+
+interface
+
+uses
+  Winapi.Windows,
+  Winapi.Messages,
+  System.SysUtils,
+  System.Variants,
+  System.Classes,
+  Vcl.Graphics,
+  Vcl.Controls,
+  Vcl.Forms,
+  Vcl.Dialogs,
+  Vcl.StdCtrls,
+  Data.DB,
+  Vcl.Grids,
+  Vcl.DBGrids,
+  FireDAC.Stan.Intf,
+  FireDAC.Stan.Option,
+  FireDAC.Stan.Param,
+  FireDAC.Stan.Error,
+  FireDAC.DatS,
+  FireDAC.Phys.Intf,
+  FireDAC.DApt.Intf,
+  FireDAC.Comp.DataSet,
+  FireDAC.Comp.Client,
+  Produto.Controller;
+
+type
+  TProdutoView = class(TForm)
+    GBPesquisa: TGroupBox;
+    lblPesquisar: TLabel;
+    cbPesquisar: TComboBox;
+    btnPesquisar: TButton;
+    edtPesquisa: TEdit;
+    DBGrid: TDBGrid;
+    MemProdutos: TFDMemTable;
+    DS: TDataSource;
+    procedure cbPesquisarClick(Sender: TObject);
+    procedure FormKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure btnPesquisarClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
+    procedure edtPesquisaKeyPress(Sender: TObject; var Key: Char);
+  private
+    { Private declarations }
+    oProdutoController: TProdutoController;
+    TipoFiltro: TFilterType;
+  public
+    { Public declarations }
+  end;
+
+var
+  ProdutoView: TProdutoView;
+
+implementation
+
+{$R *.dfm}
+
+procedure TProdutoView.btnPesquisarClick(Sender: TObject);
+var
+  MsgError: String;
+begin
+  oProdutoController.getProdutos(MemProdutos, edtPesquisa.Text, TipoFiltro,
+    MsgError);
+
+  if not MsgError.IsEmpty then
+  begin
+    ShowMessage('Não foi possível buscar os produtos.' + sLineBreak +
+      'Mensagem Técnica: ' + MsgError);
+  end;
+end;
+
+procedure TProdutoView.cbPesquisarClick(Sender: TObject);
+begin
+  case cbPesquisar.ItemIndex of
+    0:
+      begin
+        TipoFiltro := ftAll;
+        lblPesquisar.Visible := False;
+        edtPesquisa.Visible := False;
+        edtPesquisa.NumbersOnly := False;
+      end;
+    1:
+      begin
+        TipoFiltro := ftCodigo;
+        lblPesquisar.Caption := 'Codigo';
+        lblPesquisar.Visible := True;
+        edtPesquisa.Visible := True;
+        edtPesquisa.NumbersOnly := True;
+      end;
+    2:
+      begin
+        TipoFiltro := ftDescricao;
+        lblPesquisar.Caption := 'Descrição';
+        lblPesquisar.Visible := True;
+        edtPesquisa.Visible := True;
+        edtPesquisa.NumbersOnly := False;
+      end;
+    3:
+      begin
+        TipoFiltro := ftPrecoVenda;
+        lblPesquisar.Caption := 'Preço de Venda';
+        lblPesquisar.Visible := True;
+        edtPesquisa.Visible := True;
+        edtPesquisa.NumbersOnly := False;
+      end;
+  end;
+end;
+
+procedure TProdutoView.edtPesquisaKeyPress(Sender: TObject; var Key: Char);
+var
+  Texto1, Texto2, Texto3: string;
+  I: byte;
+begin
+  if (Key in ['0' .. '9', Chr(VK_BACK)]) then
+  begin
+    if (Key in ['0' .. '9']) and (Length(Trim(TEdit(Sender).Text)) > 23) then
+      Key := #0;
+
+    Texto2 := '0';
+    Texto1 := Trim(TEdit(Sender).Text) + Key;
+    for I := 1 to Length(Texto1) do
+      if Texto1[I] in ['0' .. '9'] then
+        Texto2 := Texto2 + Texto1[I];
+
+    if Key = Chr(VK_BACK) then
+      Delete(Texto2, Length(Texto2), 1);
+
+    Texto2 := FormatFloat('#,0.00', StrToInt64(Texto2) / 100);
+
+    TEdit(Sender).Text := Texto2;
+
+    TEdit(Sender).SelStart := Length(Texto2);
+  end;
+  Key := #0;
+end;
+
+procedure TProdutoView.FormCreate(Sender: TObject);
+begin
+  oProdutoController := TProdutoController.Create;
+end;
+
+procedure TProdutoView.FormDestroy(Sender: TObject);
+begin
+  FreeAndNil(oProdutoController);
+end;
+
+procedure TProdutoView.FormKeyUp(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  case Key of
+    VK_RETURN:
+      btnPesquisarClick(Sender);
+  end;
+end;
+
+end.

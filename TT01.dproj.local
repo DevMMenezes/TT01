@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2024/11/10 12:01:15.000.836,=C:\Users\DevMMenezes\Documents\Embarcadero\Studio\Projects\Unit3.pas</Transaction>
+    <Transaction>2024/11/10 12:03:46.000.682,C:\Users\DevMMenezes\Documents\Embarcadero\Studio\Projects\Unit3.pas=C:\DevMMenezes\Projetos Pessoais\TT01\Source\View\View.Main.pas</Transaction>
+    <Transaction>2024/11/10 12:03:46.000.682,C:\Users\DevMMenezes\Documents\Embarcadero\Studio\Projects\Unit3.dfm=C:\DevMMenezes\Projetos Pessoais\TT01\Source\View\View.Main.dfm</Transaction>
+    <Transaction>2024/11/10 12:03:56.000.627,C:\Users\DevMMenezes\Documents\Embarcadero\Studio\Projects\Project2.dproj=C:\DevMMenezes\Projetos Pessoais\TT01\TT01.dproj</Transaction>
+    <Transaction>2024/11/10 13:56:36.000.124,=C:\DevMMenezes\Projetos Pessoais\TT01\Unit1.pas</Transaction>
+    <Transaction>2024/11/10 14:25:56.000.385,C:\DevMMenezes\Projetos Pessoais\TT01\Unit1.pas=C:\DevMMenezes\Projetos Pessoais\TT01\Source\Model\Model.Cliente.pas</Transaction>
+    <Transaction>2024/11/10 14:32:38.000.645,=C:\DevMMenezes\Projetos Pessoais\TT01\Unit1.pas</Transaction>
+    <Transaction>2024/11/10 15:08:01.000.185,C:\DevMMenezes\Projetos Pessoais\TT01\Unit1.pas=C:\DevMMenezes\Projetos Pessoais\TT01\Source\Model\Model.Produto.pas</Transaction>
+    <Transaction>2024/11/10 15:09:14.000.370,=C:\DevMMenezes\Projetos Pessoais\TT01\Unit1.pas</Transaction>
+    <Transaction>2024/11/10 15:12:54.000.464,C:\DevMMenezes\Projetos Pessoais\TT01\Unit1.pas=C:\DevMMenezes\Projetos Pessoais\TT01\Source\Model\Pedido.Model.pas</Transaction>
+    <Transaction>2024/11/10 15:13:03.000.079,C:\DevMMenezes\Projetos Pessoais\TT01\Source\Model\Model.Produto.pas=C:\DevMMenezes\Projetos Pessoais\TT01\Source\Model\Produto.Model.pas</Transaction>
+    <Transaction>2024/11/10 15:13:09.000.432,C:\DevMMenezes\Projetos Pessoais\TT01\Source\Model\Model.Cliente.pas=C:\DevMMenezes\Projetos Pessoais\TT01\Source\Model\Cliente.Model.pas</Transaction>
+    <Transaction>2024/11/10 15:13:51.000.028,C:\DevMMenezes\Projetos Pessoais\TT01\Source\View\View.Main.pas=C:\DevMMenezes\Projetos Pessoais\TT01\Source\View\Main.View.pas</Transaction>
+    <Transaction>2024/11/10 15:13:51.000.028,C:\DevMMenezes\Projetos Pessoais\TT01\Source\View\View.Main.dfm=C:\DevMMenezes\Projetos Pessoais\TT01\Source\View\Main.View.dfm</Transaction>
+    <Transaction>2024/11/10 15:15:32.000.583,=C:\DevMMenezes\Projetos Pessoais\TT01\Unit1.pas</Transaction>
+    <Transaction>2024/11/10 17:06:22.000.680,C:\DevMMenezes\Projetos Pessoais\TT01\Unit1.pas=C:\DevMMenezes\Projetos Pessoais\TT01\Source\Model\PedidosProdutos.Model.pas</Transaction>
+    <Transaction>2024/11/10 19:30:59.000.486,=C:\DevMMenezes\Projetos Pessoais\TT01\Unit1.pas</Transaction>
+    <Transaction>2024/11/10 19:33:14.000.445,C:\DevMMenezes\Projetos Pessoais\TT01\Unit1.pas=C:\DevMMenezes\Projetos Pessoais\TT01\Source\Controller\MidiaSocial.Controller.pas</Transaction>
+    <Transaction>2024/11/10 19:46:57.000.355,=C:\DevMMenezes\Projetos Pessoais\TT01\Unit1.pas</Transaction>
+    <Transaction>2024/11/10 19:47:33.000.844,C:\DevMMenezes\Projetos Pessoais\TT01\Unit1.pas=C:\DevMMenezes\Projetos Pessoais\TT01\Source\Controller\Cliente.Controller.pas</Transaction>
+    <Transaction>2024/11/10 19:51:57.000.115,=C:\DevMMenezes\Projetos Pessoais\TT01\Unit1.pas</Transaction>
+    <Transaction>2024/11/10 20:02:09.000.484,C:\DevMMenezes\Projetos Pessoais\TT01\Unit1.dfm=C:\DevMMenezes\Projetos Pessoais\TT01\Source\View\Cliente.View.dfm</Transaction>
+    <Transaction>2024/11/10 20:02:09.000.484,C:\DevMMenezes\Projetos Pessoais\TT01\Unit1.pas=C:\DevMMenezes\Projetos Pessoais\TT01\Source\View\Cliente.View.pas</Transaction>
+    <Transaction>2024/11/10 20:12:19.000.355,=C:\DevMMenezes\Projetos Pessoais\TT01\Unit1.pas</Transaction>
+    <Transaction>2024/11/10 20:13:28.000.641,C:\DevMMenezes\Projetos Pessoais\TT01\Unit1.dfm=C:\DevMMenezes\Projetos Pessoais\TT01\Source\Database\Database.Datamodule.dfm</Transaction>
+    <Transaction>2024/11/10 20:13:28.000.641,C:\DevMMenezes\Projetos Pessoais\TT01\Unit1.pas=C:\DevMMenezes\Projetos Pessoais\TT01\Source\Database\Database.Datamodule.pas</Transaction>
+    <Transaction>2024/11/10 20:14:12.000.830,C:\DevMMenezes\Projetos Pessoais\TT01\Source\Database\Database.Datamodule.pas=</Transaction>
+    <Transaction>2024/11/10 20:14:18.000.795,=C:\DevMMenezes\Projetos Pessoais\TT01\Unit1.pas</Transaction>
+    <Transaction>2024/11/10 20:14:32.000.015,C:\DevMMenezes\Projetos Pessoais\TT01\Unit1.dfm=C:\DevMMenezes\Projetos Pessoais\TT01\Source\Database\Database.DataModule.dfm</Transaction>
+    <Transaction>2024/11/10 20:14:32.000.015,C:\DevMMenezes\Projetos Pessoais\TT01\Unit1.pas=C:\DevMMenezes\Projetos Pessoais\TT01\Source\Database\Database.DataModule.pas</Transaction>
+    <Transaction>2024/11/16 11:49:02.000.648,=C:\DevMMenezes\Projetos Pessoais\TT01\Unit1.pas</Transaction>
+    <Transaction>2024/11/16 11:50:51.000.881,C:\DevMMenezes\Projetos Pessoais\TT01\Unit1.dfm=C:\DevMMenezes\Projetos Pessoais\TT01\Source\View\Produto.View.dfm</Transaction>
+    <Transaction>2024/11/16 11:50:51.000.881,C:\DevMMenezes\Projetos Pessoais\TT01\Unit1.pas=C:\DevMMenezes\Projetos Pessoais\TT01\Source\View\Produto.View.pas</Transaction>
+    <Transaction>2024/11/16 12:09:14.000.207,=C:\DevMMenezes\Projetos Pessoais\TT01\Unit1.pas</Transaction>
+    <Transaction>2024/11/16 12:09:46.000.166,C:\DevMMenezes\Projetos Pessoais\TT01\Unit1.pas=C:\DevMMenezes\Projetos Pessoais\TT01\Source\Controller\Produto.Controller.pas</Transaction>
+    <Transaction>2024/11/16 13:55:01.000.755,=C:\DevMMenezes\Projetos Pessoais\TT01\Unit1.pas</Transaction>
+    <Transaction>2024/11/16 13:56:34.000.149,C:\DevMMenezes\Projetos Pessoais\TT01\Unit1.pas=C:\DevMMenezes\Projetos Pessoais\TT01\Source\View\Pedido.View.pas</Transaction>
+    <Transaction>2024/11/16 13:56:34.000.149,C:\DevMMenezes\Projetos Pessoais\TT01\Unit1.dfm=C:\DevMMenezes\Projetos Pessoais\TT01\Source\View\Pedido.View.dfm</Transaction>
+    <Transaction>2024/11/16 14:19:58.000.836,C:\DevMMenezes\Projetos Pessoais\TT01\Source\Database\Database.DataModule.pas=C:\DevMMenezes\Projetos Pessoais\TT01\Source\Database\DataModule.Database.pas</Transaction>
+    <Transaction>2024/11/16 14:19:58.000.836,C:\DevMMenezes\Projetos Pessoais\TT01\Source\Database\Database.DataModule.dfm=C:\DevMMenezes\Projetos Pessoais\TT01\Source\Database\DataModule.Database.dfm</Transaction>
+    <Transaction>2024/11/16 16:01:12.000.681,=C:\DevMMenezes\Projetos Pessoais\TT01\Unit1.pas</Transaction>
+    <Transaction>2024/11/16 16:37:24.000.002,C:\DevMMenezes\Projetos Pessoais\TT01\Unit1.pas=C:\DevMMenezes\Projetos Pessoais\TT01\Source\Controller\Pedido.Controller.pas</Transaction>
+    <Transaction>2024/11/17 10:40:53.000.630,=C:\DevMMenezes\Projetos Pessoais\TT01\Unit1.pas</Transaction>
+    <Transaction>2024/11/17 10:43:12.000.035,C:\DevMMenezes\Projetos Pessoais\TT01\Unit1.pas=C:\DevMMenezes\Projetos Pessoais\TT01\Source\Utils\Formatar.Utils.pas</Transaction>
+    <Transaction>2024/11/17 13:46:48.000.191,=C:\DevMMenezes\Projetos Pessoais\TT01\Unit1.pas</Transaction>
+    <Transaction>2024/11/17 13:49:18.000.816,C:\DevMMenezes\Projetos Pessoais\TT01\Unit1.pas=C:\DevMMenezes\Projetos Pessoais\TT01\Source\ViewModel\Pedido.ViewModel.pas</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="Source"/>
+    <File Path="Source\Controller"/>
+    <File Path="Source\Controller\Cliente.Controller.pas"/>
+    <File Path="Source\Controller\MidiaSocial.Controller.pas"/>
+    <File Path="Source\Controller\Produto.Controller.pas"/>
+    <File Path="Source\Controller\Pedido.Controller.pas"/>
+    <File Path="Source\Database"/>
+    <File Path="Source\Database\DataModule.Database.pas"/>
+    <File Path="Source\Database\DataModule.Database.dfm"/>
+    <File Path="Source\Model"/>
+    <File Path="Source\Model\Cliente.Model.pas"/>
+    <File Path="Source\Model\Pedido.Model.pas"/>
+    <File Path="Source\Model\PedidosProdutos.Model.pas"/>
+    <File Path="Source\Model\Produto.Model.pas"/>
+    <File Path="Source\Utils"/>
+    <File Path="Source\Utils\Formatar.Utils.pas"/>
+    <File Path="Source\View"/>
+    <File Path="Source\View\Cliente.View.pas"/>
+    <File Path="Source\View\Cliente.View.dfm"/>
+    <File Path="Source\View\Main.View.pas"/>
+    <File Path="Source\View\Main.View.dfm"/>
+    <File Path="Source\View\Pedido.View.pas"/>
+    <File Path="Source\View\Pedido.View.dfm"/>
+    <File Path="Source\View\Produto.View.pas"/>
+    <File Path="Source\View\Produto.View.dfm"/>
+    <File Path="Source\ViewModel"/>
+    <File Path="Source\ViewModel\Pedido.ViewModel.pas"/>
+  </ProjectSortOrder>
+</BorlandProject>

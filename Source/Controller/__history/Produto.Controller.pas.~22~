@@ -1,0 +1,176 @@
+unit Produto.Controller;
+
+interface
+
+uses
+  FireDAC.Comp.Client,
+  DataModule.Database,
+  System.SysUtils,
+  FireDAC.Comp.DataSet,
+  Winapi.Windows,
+  Vcl.StdCtrls,
+  FireDAC.Stan.Param, Produto.Model;
+
+type
+  TFilterType = (ftAll, ftCodigo, ftDescricao, ftPrecoVenda);
+
+type
+  TProdutoController = class
+  private
+  public
+    procedure getProdutos(MemTable: TFDMemTable; FilterValue: String;
+      FilterType: TFilterType; out MsgError: String);
+
+    procedure PesquisaKeyPress(Sender: TObject; var Key: Char);
+
+    function buscarProduto(CodigoProduto: Integer): TProdutoModel;
+
+    constructor Create;
+    destructor Destroy; override;
+  end;
+
+implementation
+
+{ TProdutoController }
+
+function TProdutoController.buscarProduto(CodigoProduto: Integer)
+  : TProdutoModel;
+var
+  Query: TFDQuery;
+  oProdutoModel: TProdutoModel;
+begin
+  Query := Connection.GetQuery();
+  oProdutoModel := TProdutoModel.Create;
+  try
+    try
+      Query.SQL.Text := 'SELECT * FROM PRODUTOS WHERE CODIGO = :CODIGO';
+
+      Query.ParamByName('CODIGO').AsInteger := CodigoProduto;
+      Query.Open();
+      Query.Transaction.Commit();
+
+      oProdutoModel.setCodigo(Query.FieldByName('CODIGO').AsInteger);
+      oProdutoModel.setDescricao(Query.FieldByName('DESCRICAO').AsString);
+      oProdutoModel.setPrecoDeVenda(Query.FieldByName('PRECO_DE_VENDA')
+        .AsCurrency);
+
+      Result := oProdutoModel;
+    except
+      on E: Exception do
+      begin
+        Query.Transaction.Rollback();
+        FreeAndNil(Query.Transaction);
+        FreeAndNil(Query);
+      end;
+    end;
+  finally
+    if Assigned(Query) then
+    begin
+      FreeAndNil(Query.Transaction);
+      FreeAndNil(Query);
+    end;
+  end;
+end;
+
+constructor TProdutoController.Create;
+begin
+  inherited;
+end;
+
+destructor TProdutoController.Destroy;
+begin
+  inherited;
+end;
+
+procedure TProdutoController.getProdutos(MemTable: TFDMemTable;
+  FilterValue: String; FilterType: TFilterType; out MsgError: String);
+var
+  Query: TFDQuery;
+begin
+  Query := Connection.GetQuery();
+  try
+    try
+      Query.SQL.Text := 'SELECT * FROM PRODUTOS ';
+
+      case FilterType of
+        ftCodigo:
+          begin
+            Query.SQL.Text := Concat(Query.SQL.Text, 'WHERE CODIGO = :CODIGO');
+            Query.ParamByName('CODIGO').AsInteger :=
+              StrToIntDef(FilterValue, 0);
+          end;
+        ftDescricao:
+          begin
+            Query.SQL.Text := Concat(Query.SQL.Text,
+              'WHERE DESCRICAO like :DESCRICAO');
+            Query.ParamByName('DESCRICAO').AsString :=
+              Concat('%', FilterValue, '%');
+          end;
+        ftPrecoVenda:
+          begin
+            Query.SQL.Text := Concat(Query.SQL.Text,
+              'WHERE PRECO_DE_VENDA like :PRECO_DE_VENDA');
+            Query.ParamByName('PRECO_DE_VENDA').AsString :=
+              Concat('%', FilterValue, '%');
+          end;
+        ftAll:
+          begin
+            { All }
+          end;
+      end;
+
+      Query.Open();
+      Query.Transaction.Commit();
+
+      MemTable.CopyDataSet(Query, [coStructure, coRestart, coAppend]);
+    except
+      on E: Exception do
+      begin
+        Query.Transaction.Rollback();
+        FreeAndNil(Query.Transaction);
+        FreeAndNil(Query);
+        MsgError := E.Message;
+      end;
+    end;
+  finally
+    if Assigned(Query) then
+    begin
+      FreeAndNil(Query.Transaction);
+      FreeAndNil(Query);
+    end;
+  end;
+end;
+
+procedure TProdutoController.PesquisaKeyPress(Sender: TObject; var Key: Char);
+var
+  Texto1, Texto2: string;
+  I: byte;
+  Valor: Double;
+begin
+  if TryStrToFloat(TEdit(Sender).Text, Valor) then
+  begin
+    if (Key in ['0' .. '9', Char(vk_back)]) then
+    begin
+      if (Key in ['0' .. '9']) and (Length(Trim(TEdit(Sender).Text)) > 23) then
+        Key := #0;
+
+      Texto2 := '0';
+      Texto1 := Trim(TEdit(Sender).Text) + Key;
+      for I := 1 to Length(Texto1) do
+        if Texto1[I] in ['0' .. '9'] then
+          Texto2 := Texto2 + Texto1[I];
+
+      if Key = Char(vk_back) then
+        Delete(Texto2, Length(Texto2), 1);
+
+      Texto2 := FormatFloat('#0.00', StrToInt64(Texto2) / 100);
+
+      TEdit(Sender).Text := Texto2;
+
+      TEdit(Sender).SelStart := Length(Texto2);
+    end;
+    Key := #0;
+  end;
+end;
+
+end.
